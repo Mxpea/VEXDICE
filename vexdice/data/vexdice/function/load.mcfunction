@@ -1,0 +1,1 @@
+tellraw @a {"text":"VEXDICE! has been loaded!","color":"green","bold":true}
