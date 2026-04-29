@@ -1,0 +1,1 @@
+$scoreboard players add output vex.core.result $(ranval)
