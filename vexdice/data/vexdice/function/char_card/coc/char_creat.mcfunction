@@ -1,10 +1,16 @@
 #coc7th
 
+#LOCK
+scoreboard players enable @s vex.char.LOCK
+execute unless score @s vex.char.LOCK matches 0 run tellraw @s [{text:"角色已锁定,如需修改请  ",color:"red"},{text:"[解锁] ",color:"green",click_event:{action:"run_command",command:"/trigger vex.char.LOCK set -1"}}]
+execute unless score @s vex.char.LOCK matches 0 run return fail
+
 #temp
 #vex.core.times.d
 #vex.core.sides
 scoreboard players enable @s vex.char.settings
 tellraw @a [{text:"玩家 "},{selector: "@s"},{"text":" 的角色卡属性如下：",color:"green"}]
+tellraw @a {text:"===============================",color:"gray"}
 
 #3d6 x5
 scoreboard players set temp vex.core.times.d 3
@@ -61,9 +67,13 @@ scoreboard players operation sum vex.char.temp += @s vex.char.coc.POW
 scoreboard players operation sum vex.char.temp += @s vex.char.coc.EDU
 
 tellraw @a [{text:"· 总和: ",color:"gold"},{score:{name:"sum",objective:"vex.char.temp"},color:"yellow"},{text:"/720",color:gray}]
+scoreboard players set temp vex.core.times.d 3
+scoreboard players operation output vex.core.result *= C5 vex.math.constant
+scoreboard players operation @s vex.char.coc.LUCK = output vex.core.result
+tellraw @a [{text:"· 幸运(LUCK): ",color:"aqua"},{score:{name:"@s",objective:"vex.char.coc.LUCK"},color:"yellow"},{text:" "},{source:storage,storage:"vexdice:core",nbt:"ran_output",color:gray}]
 
 tellraw @a {text:"===============================",color:"gray"}
-tellraw @s [{text:"[保存角色]  ",click_event:{action:"run_command",command:"/trigger vex.char.settings set 100"},color:"green",bold:true},\
+tellraw @s [{text:"[继续创建]  ",click_event:{action:"run_command",command:"/trigger vex.char.settings set 100"},color:"green",bold:true},\
             {text:"[重新生成]  ",click_event:{action:"run_command",command:"/trigger vex.char.settings set 10"},color:"yellow",bold:true}]
 
 #reset

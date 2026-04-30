@@ -12,3 +12,4 @@ scoreboard objectives add vex.dice.sides dummy
 scoreboard objectives add vex.math.constant dummy
 
 scoreboard players set C5 vex.math.constant 5
+scoreboard players set C2 vex.math.constant 2
