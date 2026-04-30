@@ -1,1 +1,2 @@
 execute as @a at @s run function vexdice:sr_input/chat/loop
+function vexdice:char_card/coc/loop

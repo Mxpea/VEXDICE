@@ -9,7 +9,6 @@ tellraw @s " "
 tellraw @s " "
 tellraw @s " "
 
-
 playsound entity.experience_orb.pickup master @s ~ ~ ~
 scoreboard players enable @s vex.input.val
 scoreboard players enable @s vex.input.type
