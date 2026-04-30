@@ -57,7 +57,7 @@ VexDice 使用 Minecraft 1.21.11 原版数据包 的命令系统（宏、/random
 
 ## 🗂️ 项目结构
 
-```
+```graph
 vexdice/
 └── data/
     ├── minecraft/
