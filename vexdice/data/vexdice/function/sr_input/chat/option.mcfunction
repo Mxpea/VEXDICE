@@ -4,6 +4,10 @@ tellraw @s " "
 tellraw @s " "
 tellraw @s " "
 tellraw @s " "
+tellraw @s " "
+tellraw @s " "
+tellraw @s " "
+tellraw @s " "
 
 
 playsound entity.experience_orb.pickup master @s ~ ~ ~
@@ -26,8 +30,9 @@ tellraw @s [{text:"[-10] ",click_event:{action:"run_command",command:"/trigger v
             {text:"[-5] ",click_event:{action:"run_command",command:"/trigger vex.input.val add -5"},color:"red"},\
             {text:"[-1] ",click_event:{action:"run_command",command:"/trigger vex.input.val add -1"},color:"red"},\
             \
-            {text:"[[ ",color:"yellow"},{score:{name:"@s",objective:"vex.input"},color:"yellow",\
-            hover_event:{action: "show_text",value:"点击开始掷骰"},click_event:{action: "run_command",command:"/trigger vex.input.settings set 1"}},{text:" ]]",color:"yellow"},\
+            {text:"[[ ",color:"yellow",click_event:{action: "run_command",command:"/trigger vex.input.settings set 1"}},\
+            {score:{name:"@s",objective:"vex.input"},color:"yellow",hover_event:{action: "show_text",value:"点击开始掷骰"},click_event:{action: "run_command",command:"/trigger vex.input.settings set 1"}},\
+            {text:" ]]",color:"yellow",click_event:{action: "run_command",command:"/trigger vex.input.settings set 1"}},\
             \
             {text:" [+1] ",click_event:{action:"run_command",command:"/trigger vex.input.val add 1"},color:"green"},\
             {text:"[+5] ",click_event:{action:"run_command",command:"/trigger vex.input.val add 5"},color:"green"},\
