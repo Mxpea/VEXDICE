@@ -67,7 +67,9 @@ scoreboard players operation sum vex.char.temp += @s vex.char.coc.POW
 scoreboard players operation sum vex.char.temp += @s vex.char.coc.EDU
 
 tellraw @a [{text:"· 总和: ",color:"gold"},{score:{name:"sum",objective:"vex.char.temp"},color:"yellow"},{text:"/720",color:gray}]
+
 scoreboard players set temp vex.core.times.d 3
+function vexdice:core/roll_internal
 scoreboard players operation output vex.core.result *= C5 vex.math.constant
 scoreboard players operation @s vex.char.coc.LUCK = output vex.core.result
 tellraw @a [{text:"· 幸运(LUCK): ",color:"aqua"},{score:{name:"@s",objective:"vex.char.coc.LUCK"},color:"yellow"},{text:" "},{source:storage,storage:"vexdice:core",nbt:"ran_output",color:gray}]
