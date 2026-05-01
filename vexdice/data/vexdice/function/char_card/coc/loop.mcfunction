@@ -18,7 +18,7 @@ scoreboard players set @a vex.char.coc.age.custom -123
 scoreboard players set @a vex.char.coc.sex.custom -123
 
 
-
+execute if score @s vex.char.settings matches 20 run function vexdice:char_card/coc/char_update
 
 
 
